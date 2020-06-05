@@ -17,16 +17,14 @@ var (
 	app     application
 	bot     *tbot.Server
 	mapz = map[string]string{ //map of what beats what
-		"scissors": "lizard", //scissors 
+		"scissors": ("lizard" || "paper") , //scissors 
 		"spock": " rock", //spoc vaporizes rock
 		"lizard": "spock", //lizard poisons spock
 		"lizard": " paper", //lizard eats paper
 		"paper":    "rock", //paper covers rock
 		"spock": "scissors", //spock smashes scissors
 		"paper": "spock", // paper disproves spock	
-		"rock":     "scissors", //rocks crushes scissors
-		"rock":  "lizard", //rock crushes lizard
-		"scissors": "paper", //scissors cut paper
+		"rock":     ("scissors"|| "lizard"), //rocks crushes scissors
 			}
 )
 
