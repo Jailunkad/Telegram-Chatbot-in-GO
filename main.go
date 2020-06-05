@@ -29,7 +29,7 @@ var (
 	}
 )
 
-const token = 897697024:AAFGfJ11_uop4gPo1YmnCzguERCfliNH4Tw
+const token = "897697024:AAFGfJ11_uop4gPo1YmnCzguERCfliNH4Tw"
 
 
 func main() {
