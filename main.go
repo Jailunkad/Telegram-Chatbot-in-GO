@@ -29,16 +29,11 @@ var (
 	}
 )
 
-func init() {
-	e := godotenv.Load()	
-	if e != nil {
-		log.Println(e)
-	}
-	token = os.Getenv("TELEGRAM_TOKEN")
-}
+const token = 897697024:AAFGfJ11_uop4gPo1YmnCzguERCfliNH4Tw
+
 
 func main() {
-	bot = tbot.New(token)
+	bot = tbot.New(token, tbot.WithWebHook("https://rpsls-bot.herokuapp.com", ":"+os.Getenv("PORT")))
 	app.client = bot.Client()
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
