@@ -29,16 +29,10 @@ var (
 	}
 )
 
-func init() {
-	e := godotenv.Load()
-	if e != nil {
-		log.Println(e)
-	}
-	token = os.Getenv("TELEGRAM_TOKEN")
-}
+
 
 func main() {
-	bot = tbot.New(token)
+	bot = tbot.New(897697024:AAFGfJ11_uop4gPo1YmnCzguERCfliNH4Tw)
 	app.client = bot.Client()
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
