@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/yanzay/tbot/v2"
 )
 
@@ -20,7 +19,6 @@ type application struct {
 var (
 	app     application
 	bot     *tbot.Server
-	token   string
 	options = map[string]string{
 		// choice : beats
 		"paper":    "rock",
@@ -33,7 +31,7 @@ const token = "897697024:AAFGfJ11_uop4gPo1YmnCzguERCfliNH4Tw"
 
 
 func main() {
-	bot = tbot.New(token, tbot.WithWebHook("https://rpsls-bot.herokuapp.com", ":"+os.Getenv("PORT")))
+	bot = tbot.New(token)
 	app.client = bot.Client()
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
